@@ -41,3 +41,40 @@ label = ['apple','apple','orange','orange']
 ```
 pip3 install scikit-learn
 ```
+*   Since we only need the package ```tree``` from sklearn as such we will import
+```py
+from sklearn.tree import DecisionTreeClassifier
+```
+*   To Train our model we need some questions and answers, Here the questions are called as features and answers are called as labels.
+```py
+# Here Smoooth is for apple and Bumpy is for Orange
+    # Smooth = 0
+    # Bumpy = 1
+features=[[100,0],[120,0],[130,1],[150,1]]
+label = ['apple','apple','orange','orange']
+```
+*   Now in order to put this data we need a classifier and we will use Decision Tree Classifier for this.
+```py
+# Calling Decision Tree Classifier
+clf = DecisionTreeClassifier()
+```
+*   There is a function in the classifier called ```fit``` which is used to fit the features and labels in the Algorithm in order to train it for results.
+```py
+# Now time for Training data
+trained = clf.fit(features,label)
+```
+*   Now the variable ```trained``` is the brain of our program and it will be used to predict the queries.
+*   Now we will use the ```predict``` function in order to predict the data by entering a question and it will return an answer for that.
+```py
+# Now time for pridicting
+trained.predict([[110,0]])
+array(['apple'], dtype='<U6')
+
+trained.predict([[123,1]])
+array(['apple'], dtype='<U6')
+
+trained.predict([[119,1]])
+array(['apple'], dtype='<U6')
+```
+*   Since now we are able to predict the data by the trained variable and it results us the desired output.
+
